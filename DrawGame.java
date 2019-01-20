@@ -1,4 +1,5 @@
 import java.util.*;
+import java.awt.Font;
 
 public class DrawGame {
   public static int[] userStatus = new int[5];
@@ -15,8 +16,21 @@ public class DrawGame {
 
     showHomePage();
 
-    int[] arr = {10, 30, 50, 100, 30};
+    Integer[] arr = {10, 30, 50, 100, 30};
     updateGUIStatus(arr);
+
+    Integer[] arr1 = {10, -30, 50, -75, 30};
+    String p = "wanna sleep?";
+    HashMap<String, Integer[]> hm = new HashMap<>();
+    hm.put("of course! I'm not kk", arr1);
+    hm.put("certainly! I'm not kk", arr1);
+    hm.put("without doubt! I'm not kk", arr1);
+
+    Decision dc = new Decision(p, hm);
+    String outChoice = makeChoice(dc);
+    System.out.println("choimade is: " + outChoice);
+
+
 
 
 
@@ -34,8 +48,9 @@ public class DrawGame {
     StdDraw.picture(40, 25, "start1.png", 80, 50);
     StdDraw.show(500);
 
+    Font c = new Font("Courier", Font.BOLD, 30);
+    StdDraw.setFont(c);
     while (true) {
-      StdDraw.setPenRadius(20);
       StdDraw.text(40, 15, "Type s to start");
       StdDraw.setPenColor(StdDraw.WHITE);
       StdDraw.show(100);
@@ -62,10 +77,12 @@ public class DrawGame {
     StdDraw.clear();
     StdDraw.picture(40, 25, "homepage.png", 80, 53);
 
-    StdDraw.setPenColor(StdDraw.WHITE);
     double x = centerX;
     for (int i = 0; i < 5; i++) {
-      StdDraw.filledRectangle(centerX, centerY, length / 2, barHeight);
+
+      //StdDraw.setPenColor(StdDraw.DARK_GRAY);
+      double barLength = length * (double)(userStatus[i]/(double)fullSt);
+      pushNewStatus(barLength, x);
       x += dist;
     }
 
@@ -73,11 +90,14 @@ public class DrawGame {
   }
 
   // input: new status differences
-  public static void updateGUIStatus(int[] newStatusDiff) {
+  // change the color of the status based on input
+  public static void updateGUIStatus(Integer[] newStatusDiff) {
     double x = centerX;
     for (int i = 0; i < 5; i++) {
+      /*
       StdDraw.setPenColor(StdDraw.WHITE);
       StdDraw.filledRectangle(x, centerY, length / 2, barHeight);
+      */
 
       if (newStatusDiff[i] < 0) {
         StdDraw.setPenColor(StdDraw.RED);
@@ -91,22 +111,101 @@ public class DrawGame {
       if (barLength > length)
         barLength = length;
 
-      double actualX = barLength/2 + (x - length*0.5);
-      System.out.println(barLength);
+      double actualX = barLength / 2 + (x - length * 0.5);
       StdDraw.filledRectangle(actualX, centerY, barLength / 2, barHeight);
-      StdDraw.show(100);
-      StdDraw.setPenColor(StdDraw.DARK_GRAY);
-      StdDraw.filledRectangle(actualX, centerY, barLength / 2, barHeight);
-      StdDraw.show(100);
+      StdDraw.show(170);
+
+      pushNewStatus(barLength, x);
 
       x += dist;
     }
   }
 
+  // input: the current barlength of one STATUS, and x is the center of bar
+  // make the status stay onto the current bar length
+  public static void pushNewStatus(double barLength, double x) {
+    double actualX = barLength / 2 + (x - length * 0.5);
+    //System.out.println(barLength);
+    /*
+    StdDraw.filledRectangle(actualX, centerY, barLength / 2, barHeight);
+    StdDraw.show(170);
+    */
+
+    StdDraw.setPenColor(StdDraw.WHITE);
+    StdDraw.filledRectangle(x, centerY, length / 2, barHeight);
+
+    StdDraw.setPenColor(StdDraw.DARK_GRAY);
+    StdDraw.filledRectangle(actualX, centerY, barLength / 2, barHeight);
+    StdDraw.show();
+  }
+
+
   // input: the ongoing event
   // output: the decision as a String
-  public static String makeChoice(Story st) {
-    return "";
+  public static String makeChoice(Decision dec) {
+    double textX = 25;
+    Font promptFont = new Font("Dialog", Font.BOLD, 18);
+    StdDraw.setFont(promptFont);
+    StdDraw.setPenColor(StdDraw.BLACK);
+    StdDraw.textLeft(textX, 37, dec.getPrompt());
+    StdDraw.show(1000);
+
+
+    Set<String> choiceBuffer = dec.getOptions().keySet();  // all choices
+    int numChoices = choiceBuffer.size();
+    String[] choices = new String[numChoices];
+    int i = 0;
+    //String showChoices = "";
+    double textY = 32;
+    double distY = 2.5;
+    StdDraw.setPenColor(StdDraw.DARK_GRAY);
+    for (String c : choiceBuffer) {
+      choices[i] = c;
+      c = "    " + c;
+
+      Font instFont = new Font("Dialog", Font.PLAIN, 14);
+      StdDraw.setFont(instFont);
+
+      StdDraw.textLeft(textX, textY, "Type " + i + " on keyboard: ");
+      textY -= distY;
+
+      int j = 0;
+      int numOneLine = 55;
+      Font choiceFont = new Font("Dialog", Font.BOLD, 18);
+      StdDraw.setFont(choiceFont);
+      while (j < c.length()) {
+        int end = j + numOneLine;
+        if (c.length() < j + numOneLine) {
+          end = c.length();
+        }
+        StdDraw.textLeft(textX, textY, c.substring(j, end));
+        textY -= distY;
+        j += numOneLine;
+      }
+      textY -= distY;
+      StdDraw.show(100);
+      i++;
+    }
+
+
+    //StdDraw.textLeft(textX, 25, showChoices);
+    StdDraw.show();
+
+    // now user make the choice
+    while (true) {
+      if (StdDraw.hasNextKeyTyped()) {
+        char charOfChoice = StdDraw.nextKeyTyped();
+        if (charOfChoice > 47 && charOfChoice < 48 + numChoices) {
+            // if legitmate choices made, return that choice
+            //showHomePage();
+            updateGUIStatus(dec.getOptions().get(choices[charOfChoice - 48]));
+            showHomePage();
+            return choices[charOfChoice - 48];
+          }
+      }
+    }
+
+    //return "";
   }
 
 }
