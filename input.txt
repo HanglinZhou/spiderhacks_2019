@@ -37,10 +37,6 @@ _Travel!
 -1 3 0 -3 3
 _Stay here and recharge
 1 0 1 0 0
-=Happy Halloween!!!!
-_Boring
-_trick or treat
-0 2 0 -1 1
 =Final is coming...
 _I am with my study group
 2 1 -1 0 0
@@ -55,7 +51,7 @@ _Computer Science and Math
 :That seems to be a wise choice
 _Social Science
 _Literature and Language
-_Leardership studies
+_Leadership studies
 _Undecided
 =The career expo is tomorrow. Are you going?
 _Not interested
@@ -106,6 +102,21 @@ _I want to enjoy the summer with my family and friends. Maybe go somewhere inter
 =You set an alarm at 6:30am today since you need to register for classes. You sleep over it.
 -5 0 0 0 0
 :Your schedule for the start of your junior year is miserable. All 9am and 6pm classes.
+=Your application for your dream program get rejected.
+=You have a hard year. Do you need any help?
+_No I am fine.
+-1 -3 -3 0 -1
+_I am going to CAPS asking for help.
+0 0 3 0 0
+= Spring break. Your friends and your crush both inviting you to travel. You wanna go with?
+_My friends!
+0 4 0 -3 0
+_My crush for sure.
+0 0 0 -3 4
+=Happy Halloween!!!! This is your last year in college.
+_Boring
+_trick or treat
+0 2 0 -1 1
 =Your college four year is coming to an end. What is your plan after college?
 _I plan to go to grad school
 _I am going to work
@@ -124,7 +135,7 @@ _Go away!
 0 1 0 0 0
 =Your computer is broken. You have to fix it.
 0 0 0 -5 0
-=You listen to a resume workshop and polish your resume
+=You go to a resume workshop and polish your resume
 2 0 0 0 0
 =You attend an opening ceremony for a student organization. You run into someone special
 0 1 0 0 3
@@ -136,12 +147,12 @@ _You ordered takeout. You get a food poisoning.
 -1 -1 -1 -1 -1
 =Your parents decide to give you a second-hand car (Suddenly)!
 0 1 0 0 1
-=The boardgame club and a honor society invite you to join. Which one do you choose?
+=The boardgame club and an honor society invite you to join. Which one do you choose?
 _The boardgame club
 0 2 0 -1 1
 _The honor society
 2 1 0 -1 0
-_I prefer not to join either one of them
+_I prefer neither one of them
 =You have a big fight with your roommate. You are both angry with each other.
 -1 -1 0 0 0
 
