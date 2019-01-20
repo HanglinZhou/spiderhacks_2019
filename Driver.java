@@ -27,7 +27,14 @@ public class Driver {
       hm.put("20 rounds per Yr", arr);
       hm.put("50 rounds per Yr", arr);
       hm.put("365 rounds per Yr", arr);
-      Decision tmAsker = new Decision(prompt, hm);
+
+      HashMap<String, String> hm1 = new HashMap<>();
+      hm1.put("10 rounds per Yr", "");
+      hm1.put("20 rounds per Yr", "");
+      hm1.put("50 rounds per Yr", "");
+      hm1.put("365 rounds per Yr", "");
+
+      Decision tmAsker = new Decision(prompt, hm, hm1);
       return tmAsker;
     }
 
@@ -42,10 +49,13 @@ public class Driver {
       time = Integer.parseInt(str[2]) * 4;
       User user = new User(str[0], str[1]);
       DrawGame.infoAsker();
-      Executor exe = new Executer("input.txt");
+      Executer exe = new Executer(time, "input.txt");
+
+      System.out.println("before for loop");
 
       for (int i = 0; i < time; i++) {
-        Story st = exe.pickNextStory();
+        System.out.println("in for loop");
+        Story st = exe.pickNextStory(i);
         DrawGame.makeChoice(st.getDecision());
       }
 
