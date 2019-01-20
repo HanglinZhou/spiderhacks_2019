@@ -152,7 +152,8 @@ public class Storyline {
 
                 Decision decision = new Decision(prompt, options);
                 Story story = new Story(decision, type);
-                //        if (type == Type.FIXED) { //todo
+                //        if (type == Type.FIXED) { //
+
 //
 //        }
                 if (type == Type.DAILY) {
