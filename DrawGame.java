@@ -28,7 +28,7 @@ public class DrawGame {
 
     Decision dc = new Decision(p, hm);
     String outChoice = makeChoice(dc);
-    System.out.println("choimade is: " + outChoice);
+    System.out.println("choice made is: " + outChoice);
 
 
 
