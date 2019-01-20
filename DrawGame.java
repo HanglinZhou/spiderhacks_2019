@@ -106,7 +106,7 @@ public class DrawGame {
   // input: the ongoing event
   // output: the decision as a String
   public static String makeChoice(Story st) {
-
+    return "";
   }
 
 }
