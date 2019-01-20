@@ -35,12 +35,12 @@ public class Storyline {
         }
     }
 
-
     ArrayList<PipelinedEvent> fixed;
     ArrayList<Story> daily;
     ArrayList<Story> random;
-    HashMap<String, Story> randomTriggered;
+    HashMap<String, Story> randomTriggered; //key as the outcome of some decision, value is the triggered event
     Queue<PipelinedEvent> queue;
+    int time;
 
     public int getTime() {
         return time;
@@ -50,13 +50,17 @@ public class Storyline {
         this.time = time;
     }
 
-    int time;
+
 
     public Storyline(String fileName, int time) throws IOException {
         this.time = time;
+
+
+
         File file = new File(fileName);
 
         BufferedReader br = new BufferedReader(new FileReader(file));
+
 
         String st;
         Type curType = Type.DEFAULT;
@@ -73,10 +77,10 @@ public class Storyline {
                 curType = Type.RANDOM;
                 break;
             }
-            else if (st.equals("randomTriggered")) {
-                curType = Type.RANDOMTRIGGERED;
-                break;
-            }
+//            else if (st.equals("randomTriggered")) {
+//                curType = Type.RANDOMTRIGGERED;
+//                break;
+//            }
             else if (st.equals("dailyTriggered")) {
                 curType = Type.DAILYTRIGGERED;
                 break;
@@ -85,6 +89,8 @@ public class Storyline {
             storeStory(br, curType, st);
 
         }
+
+
     }
 
 
@@ -132,15 +138,20 @@ public class Storyline {
         while ((st = br.readLine()) != null) {
             HashMap<String, Integer[]> options = new HashMap<>();
             String prompt = "";
-
+            double timeRatio = 0;
+            String cause = "";
             if (st.charAt(0) != '-') { //prompt
                 prompt = st;
                 while ((st = br.readLine()) != null) {
                     String option = "";
                     Integer[] scores = new Integer[STATUS_NUM];
-                    if (st.charAt(0) == '-') { //option
+                    if (st.charAt(0) == '_') { //option
                         option = st;
                     }
+                    else if (st.chatAt(0) == '>')
+                        timeRatio = Double.parseDouble(st.substring(1));
+                    else if (st.charAt(0) == '+')
+                        cause = st.substring(1);
                     else {
                         String[] scoresString = st.split(" ");
                         for (int i = 0; i < scores.length; i++) {
@@ -152,19 +163,24 @@ public class Storyline {
 
                 Decision decision = new Decision(prompt, options);
                 Story story = new Story(decision, type);
-                //        if (type == Type.FIXED) { //
 
-//
-//        }
-                if (type == Type.DAILY) {
+
+                if (type == Type.FIXED) { //todo
+                    int remainTime = timeRatio * time;
+                    fixed.add(new PipelinedEvent(story, remainTime));
+                }
+
+                else if (type == Type.DAILY) {
                     daily.add(story);
                 }
                 else if (type == Type.RANDOM) {
                     random.add(story);
                 }
-//                else { //randomtriggered
-//
-//                }
+                else { //randomtriggered
+                    randomTriggered.put(cause, story);
+                    int remainTime = timeRatio * time+time;
+                    queue.add(new PipelinedEvent(story, remainTime));
+                }
             }
 
         }
