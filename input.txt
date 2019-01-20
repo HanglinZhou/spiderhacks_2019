@@ -13,7 +13,7 @@ _Quiet floors...
 2 0 0 0 0
 _Regular one is fine
 0 1 0 0 0
-=Class registration is openning now. What classes do you wanna take? 
+=Class registration is opening now. What classes do you wanna take?
 _Art
 _History
 _Business
@@ -21,7 +21,7 @@ _Natural Science
 _Computer Science and Math
 _Social Science
 _Literature and Language
-_Leardership studies
+_Leadership studies
 _FYS
 =Orientation week is over now. You like it??
 _Yes. I kinda do. I met a lot of new people.
@@ -83,14 +83,14 @@ _Computer Science and Math
 :That seems to be a wise choice
 _Social Science
 _Literature and Language
-_Leardership studies
+_Leadership studies
 _Undecided
 =Thanksgiving break! Going anywhere?
 _Home!
 0 1 0 0 0
 _Somewhere warmer
 0 1 0 -2 0
-_Probabily stay on campus
+_Probably stay on campus
 1 0 0 0 0
 =You have 3 projects, 2 papers, and 3 finals during finals week.
 _I am giving up now. I am too tired.
@@ -99,13 +99,17 @@ _I will stay strong. What doesn't kill you makes you stronger.
 2 0 2 0 0
 =You'd better figure out what you want to do for the summer before the Spring semester start. 
 _I want to do a summer research
-_I want to find an intership
-_I want to enjoy the summer with my family and friends. Maybe go somewhere intersting.
+_I want to find an internship
+_I want to enjoy the summer with my family and friends. Maybe go somewhere interesting.
 =You fail your midterms because you have a fever.
 -2 0 -2 0 0
-=You set an alarm at 6:30am today since you need to regiter for classes. You sleep over it.
+=You set an alarm at 6:30am today since you need to register for classes. You sleep over it.
 -5 0 0 0 0
-:Your schedule for the start of your junior year is miserable. All 9am and 6pm claseses. 
+:Your schedule for the start of your junior year is miserable. All 9am and 6pm classes.
+=Your college four year is coming to an end. What is your plan after college?
+_I plan to go to grad school
+_I am going to work
+_I am planning a gap year
 
 random
 =flu season! You are sick.
@@ -138,7 +142,8 @@ _The boardgame club
 _The honor society
 2 1 0 -1 0
 _I prefer not to join either one of them
-
+=You have a big fight with your roommate. You are both angry with each other.
+-1 -1 0 0 0
 
 
 daily
