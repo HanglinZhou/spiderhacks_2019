@@ -1,7 +1,7 @@
 fixed
 =Do you want to be a spider?
 >0.0
-_yes 
+_yes
 0 0 0 0 0
 :Enjoy!
 _no
@@ -34,10 +34,10 @@ _Nonononono.
 0 0 0 0 0
 =The first MIDTERM is here.
 >0.1
-_I am well prepared. 
+_I am well prepared.
 _Need to pull a all nighter...
 0 0 -1 0 0
-=Wow!!! Fall break!!! 
+=Wow!!! Fall break!!!
 >0.12
 _Travel!
 -1 3 0 -3 3
@@ -79,7 +79,7 @@ _I struggled and helped him eventually.
 0 1 -2 0 0
 :Since that, I live in regret.
 _I helped him.
--2 1 -1 0 0 
+-2 1 -1 0 0
 :We got caught.
 =You are a sophomore now. Maybe it's time to think about your major again.
 >0.24
@@ -175,7 +175,7 @@ _Go away!
 _Time cures all ills.
 -1 -1 -2 0 0
 _I am going to the health center now.
-_You ordered takeout. You get a food poisoning.
+=You ordered takeout. You get a food poisoning.
 -1 -1 -1 -1 -1
 =Your parents decide to give you a second-hand car (Suddenly)!
 0 1 0 0 1

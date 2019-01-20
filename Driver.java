@@ -1,7 +1,15 @@
 import java.util.*;
 
 public class Driver {
-    public static int time = 0;
+    private static int time = -10;
+
+    public static void setTime(int tm) {
+      time = tm;
+    }
+
+    public static int getTime() {
+      return time;
+    }
 
     public static String nameAsker() {
       return "What's your name, friend? (support upper/lowercase letters)";
@@ -29,8 +37,15 @@ public class Driver {
 
       String[] str = DrawGame.infoAsker();
       //0: name; 1: gender; 2: time
-      time = Integer.parseInt(str[2]);
 
+      //setup
+      time = Integer.parseInt(str[2]) * 4;
+      User user = new User(str[0], str[1]);
+      DrawGame.infoAsker();
+
+      for (int i = 0; i < time; i++) {
+        
+      }
 
 
 

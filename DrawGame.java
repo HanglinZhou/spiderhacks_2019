@@ -11,7 +11,6 @@ public class DrawGame {
   public final static double barHeight = 0.2;
   public static String name = "";
   public static String gender = "";
-  public static int timeLeft = -10;
 
   public static void main(String[] args) {
 
@@ -93,18 +92,19 @@ public class DrawGame {
     StdDraw.clear();
     StdDraw.picture(40, 25, "homepage.png", 80, 53);
 
-    Font f = new Font("Courier", Font.BOLD, 15);
+    Font f = new Font("Dialog", Font.PLAIN, 13.5);
     StdDraw.setPenColor(StdDraw.BLACK);
     StdDraw.setFont(f);
 
     if (name != "") {
-      StdDraw.textLeft(70, 6, "name: " + name);
+      StdDraw.textLeft(67, 6, "name: " + name);
     }
     if (gender != "") {
-      StdDraw.textLeft(70, 4, "gender: " + gender);
+      StdDraw.textLeft(67, 4, "gender: " + gender);
     }
-    if (timeLeft >= 0) {
-      StdDraw.textLeft(70, 2, "time left: " + timeLeft);
+    if (Driver.getTime() >= 0) {
+      System.out.println("time left > 0");
+      StdDraw.textLeft(67, 2, "time left: " + Driver.getTime());
     }
 
     double x = centerX;
@@ -255,7 +255,7 @@ public class DrawGame {
     StdDraw.setPenColor(StdDraw.BLACK);
 
     int y = ntEndY + 8;
-    StdDraw.text(x, y, "The school requires some basic info...");
+    StdDraw.text(x, y, "some basic info before we start...");
     y -= 3.5;
 
     StdDraw.text(x, y, Driver.nameAsker());
@@ -312,8 +312,8 @@ public class DrawGame {
       str[2] = tm.getChoice().substring(0, 2);
     }
 
-    timeLeft = Integer.parseInt(str[2]);
-
+    Driver.setTime(Integer.parseInt(str[2]) * 4);
+    showHomePage();
     return str;
 
 

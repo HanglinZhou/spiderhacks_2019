@@ -7,8 +7,6 @@ public class User {
     final int STATUS_NUM = 6;
     String name;
     String gender;
-    int age;
-
     //increasing index: academic, social, health, money, (confidence), love relationship
     int[] status;
     ArrayList<Decision> decisionHistory;
@@ -17,10 +15,9 @@ public class User {
     int year;
     double units;
 
-    public User(String name, String gender, int age) {
+    public User(String name, String gender) {
         this.name = name;
         this.gender = gender;
-        this.age = age;
     }
 
     public int getSTATUS_NUM() {
@@ -41,14 +38,6 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public int[] getStatus() {
