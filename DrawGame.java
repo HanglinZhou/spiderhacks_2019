@@ -92,7 +92,7 @@ public class DrawGame {
     StdDraw.clear();
     StdDraw.picture(40, 25, "homepage.png", 80, 53);
 
-    Font f = new Font("Dialog", Font.PLAIN, 13.5);
+    Font f = new Font("Dialog", Font.PLAIN, 14);
     StdDraw.setPenColor(StdDraw.BLACK);
     StdDraw.setFont(f);
 
@@ -103,7 +103,7 @@ public class DrawGame {
       StdDraw.textLeft(67, 4, "gender: " + gender);
     }
     if (Driver.getTime() >= 0) {
-      System.out.println("time left > 0");
+      //System.out.println("time left > 0");
       StdDraw.textLeft(67, 2, "time left: " + Driver.getTime());
     }
 

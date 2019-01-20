@@ -39,7 +39,7 @@ public class Storyline {
     ArrayList<Story> daily;
     ArrayList<Story> random;
     HashMap<String, Story> randomTriggered; //key as the outcome of some decision, value is the triggered event
-    Queue<PipelinedEvent> queue;
+    ArrayList<PipelinedEvent> queue; //events triggered
     int time;
 
     public int getTime() {
@@ -126,11 +126,11 @@ public class Storyline {
         this.randomTriggered = randomTriggered;
     }
 
-    public Queue<PipelinedEvent> getQueue() {
+    public ArrayList<PipelinedEvent> getQueue() {
         return queue;
     }
 
-    public void setQueue(Queue<PipelinedEvent> queue) {
+    public void setQueue(ArrayList<PipelinedEvent> queue) {
         this.queue = queue;
     }
 
@@ -150,13 +150,13 @@ public class Storyline {
                     if (st.charAt(0) == '_') { //option
                         option = st;
                     }
-                    else if (st.chatAt(0) == '>')
+                    else if (st.charAt(0) == '>')
                         timeRatio = Double.parseDouble(st.substring(1));
                     else if (st.charAt(0) == '+')
                         cause = st.substring(1);
-                    else if (st.charAt(':')) {
+                    else if (st.charAt(0) == (':')) {
                         textAfterChoice = st.substring(1);
-                        textAfterChouces.put(option, textAfterChoice);
+                        textAfterChoices.put(option, textAfterChoice);
                     }
                     else {
                         String[] scoresString = st.split(" ");
@@ -172,7 +172,7 @@ public class Storyline {
 
 
                 if (type == Type.FIXED) { //todo
-                    int remainTime = timeRatio * time;
+                    int remainTime = (int)(timeRatio * time);
                     fixed.add(new PipelinedEvent(story, remainTime));
                 }
 
@@ -184,7 +184,7 @@ public class Storyline {
                 }
                 else { //randomtriggered
                     randomTriggered.put(cause, story);
-                    int remainTime = timeRatio * time+time;
+                    int remainTime = (int)timeRatio * time+time;
                     queue.add(new PipelinedEvent(story, remainTime));
                 }
             }
