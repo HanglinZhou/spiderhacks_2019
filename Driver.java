@@ -42,9 +42,11 @@ public class Driver {
       time = Integer.parseInt(str[2]) * 4;
       User user = new User(str[0], str[1]);
       DrawGame.infoAsker();
+      Executor exe = new Executer("input.txt");
 
       for (int i = 0; i < time; i++) {
-        
+        Story st = exe.pickNextStory();
+        DrawGame.makeChoice(st.getDecision());
       }
 
 
