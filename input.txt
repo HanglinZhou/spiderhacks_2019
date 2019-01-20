@@ -205,7 +205,6 @@ _work on campus
 dailyTriggered
 +go to office hour
 >0.01
-:You are interested in your professor's research area.
 =Your professor sends you an email asking: "Are you still interested in joining my lab?"
 _Sorry, I wish you could ask earlier...
 _No, I am not interested anymore.
@@ -213,7 +212,7 @@ _I'd love to!!
 2 1 0 0 0
 +go party
 >0.02
-:Your crush on that party texts you and asks you out.
+=Your crush on that party texts you and asks you out.
 _I have to study for my tests.
 2 0 0 0 -1
 _We are going to a movie!

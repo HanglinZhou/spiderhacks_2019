@@ -3,12 +3,15 @@ import java.util.HashMap;
 
 public class Decision {
     String prompt; //"Do you go to the gym or stay in lib?"
-    HashMap<String, Integer[]> options; //value: scores on status
     String choice;
+    HashMap<String, Integer[]> options; //value: scores on status
+    HashMap<String, String> textAfterChoice;
 
-    public Decision(String prompt, HashMap<String, Integer[]> options) {
+
+    public Decision(String prompt, HashMap<String, Integer[]> options, HashMap<String, String> textAfterChoice) {
         this.prompt = prompt;
-        this.options = options;
+        this.options = options;;
+        this.textAfterChoice = textAfterChoice;
     }
 
     public String getPrompt() {
@@ -34,6 +37,15 @@ public class Decision {
     public void setChoice(String choice) {
         this.choice = choice;
     }
+
+    public HashMap<String, String> getTextAfterChoice() {
+        return textAfterChoice;
+    }
+
+    public void setTextAfterChoice(HashMap<String, String> textAfterChoice) {
+        this.textAfterChoice = textAfterChoice;
+    }
+
 
     public void updateStatus(User user) {
         Integer[] changes = options.get(choice);
