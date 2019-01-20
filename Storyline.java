@@ -9,7 +9,7 @@ public class Storyline {
 
     public class PipelinedEvent {
         Story story;
-        int remainTime; //fixed:
+        int remainTime; //fixed: will be actual time
 
         public Story getStory() {
             return story;
@@ -137,9 +137,11 @@ public class Storyline {
     private void storeStory(BufferedReader br, Type type, String st) throws IOException{
         while ((st = br.readLine()) != null) {
             HashMap<String, Integer[]> options = new HashMap<>();
+            HashMap<String, String> textAfterChoices = new HashMap<>();
             String prompt = "";
             double timeRatio = 0;
             String cause = "";
+            String textAfterChoice = "";
             if (st.charAt(0) != '-') { //prompt
                 prompt = st;
                 while ((st = br.readLine()) != null) {
@@ -152,6 +154,10 @@ public class Storyline {
                         timeRatio = Double.parseDouble(st.substring(1));
                     else if (st.charAt(0) == '+')
                         cause = st.substring(1);
+                    else if (st.charAt(':')) {
+                        textAfterChoice = st.substring(1);
+                        textAfterChouces.put(option, textAfterChoice);
+                    }
                     else {
                         String[] scoresString = st.split(" ");
                         for (int i = 0; i < scores.length; i++) {
@@ -161,7 +167,7 @@ public class Storyline {
                     options.put(option, scores);
                 }
 
-                Decision decision = new Decision(prompt, options);
+                Decision decision = new Decision(prompt, options, textAfterChoices);
                 Story story = new Story(decision, type);
 
 
