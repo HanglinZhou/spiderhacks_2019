@@ -153,12 +153,20 @@ _trick or treat
 _I plan to go to grad school
 _I am going to work
 _I am planning a gap year
-
+&Congratulation! You officially finished your college life in U of R!
+_You didn't finish all your required classes. You cannot graduate.
+_You graduated with honor. Congratulation! You are so awesome!!
+_You graduated but you didn't find a job. Now you live with your parents and stay in home all day.
+_You gaped for a year and you went to China. You love it there.
+_You got in a nice grad school and you published a paper! Nice job!
+_You got engaged with your love. So sweet~
+_You didn't treat yourself well in college, and you never lose your freshmen fifteen for your life.
+_You are nearly broke, and you have to work for years to pay your student loan.
 random
 =flu season! You are sick.
 -1 0 -3 -1 -1
 =Do you want to build a snowman?
-_Let's go
+_Let's go and play!
 0 1 0 0 0
 _Go away!
 0 -1 0 0 0

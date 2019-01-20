@@ -14,6 +14,8 @@ public class Executer {
 
     }
 
+    // todo: map image with prompt in driver
+    // todo: decide ending
     public Story pickNextStory(int curTime){
         int allRandomEvent = random.size();
         Random r = new Random();
@@ -38,4 +40,6 @@ public class Executer {
             return daily.get(currProcessIndex[1]-1);
         }
     }
+
+    public Story pickEnding(
 }
