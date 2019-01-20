@@ -1,0 +1,158 @@
+fixed
+=Do you want to be a spider?
+_yes 
+0 0 0 0 0
+:Enjoy!
+_no
+0 0 0 0 0
+:All your other school applications got rejected. You have to be a spider! Enjoy!
+=What's your dorm like?
+_I want a substance free dorm
+1 0 1 0 0
+_Quiet floors...
+2 0 0 0 0
+_Regular one is fine
+0 1 0 0 0
+=Class registration is openning now. What classes do you wanna take? 
+_Art
+_History
+_Business
+_Natural Science
+_Computer Science and Math
+_Social Science
+_Literature and Language
+_Leardership studies
+_FYS
+=Orientation week is over now. You like it??
+_Yes. I kinda do. I met a lot of new people.
+0 3 0 0 0
+_Nonononono.
+0 0 0 0 0
+=The first MIDTERM is here. 
+_I am well prepared. 
+_Need to pull a all nighter... (((((todo)))))
+0 0 -1 0 0
+=Wow!!! Fall break!!! (((random?)))
+_Travel!
+-1 3 0 -3 3
+_Stay here and recharge
+1 0 1 0 0
+=Happy Halloween!!!!
+_Boring
+_trick or treat
+0 2 0 -1 1
+=Final is coming...
+_I am with my study group
+2 1 -1 0 0
+_I am better studying alone
+2 0 -1 0 0
+=Spring semester starts. What major are you thinking about?
+_Art
+_History
+_Business
+_Natural Science
+_Computer Science and Math
+:That seems to be a wise choice
+_Social Science
+_Literature and Language
+_Leardership studies
+_Undecided
+=The career expo is tomorrow. Are you going?
+_Not interested
+_I am ready for it
+2 0 0 0 0
+=There is a study abroad info session at the International center. You interested?
+_Nope
+_I think I will go
+1 1 0 0 0
+=Final is coming. Your best friend asks for your "help" during the FYS final over and over again.
+_I need to report it to the Honor council.
+1 -5 0 0 0
+_I struggled and helped him eventually.
+0 1 -2 0 0
+:Since that, I live in regret.
+_I helped him.
+-2 1 -1 0 0 
+:We got caught.
+=You are a sophomore now. Maybe it's time to think about your major again.
+_Art
+_History
+_Business
+_Natural Science
+_Computer Science and Math
+:That seems to be a wise choice
+_Social Science
+_Literature and Language
+_Leardership studies
+_Undecided
+=Thanksgiving break! Going anywhere?
+_Home!
+0 1 0 0 0
+_Somewhere warmer
+0 1 0 -2 0
+_Probabily stay on campus
+1 0 0 0 0
+=You have 3 projects, 2 papers, and 3 finals during finals week.
+_I am giving up now. I am too tired.
+-1 0 0 0 0
+_I will stay strong. What doesn't kill you makes you stronger.
+2 0 2 0 0
+=You'd better figure out what you want to do for the summer before the Spring semester start. 
+_I want to do a summer research
+_I want to find an intership
+_I want to enjoy the summer with my family and friends. Maybe go somewhere intersting.
+=You fail your midterms because you have a fever.
+-2 0 -2 0 0
+=You set an alarm at 6:30am today since you need to regiter for classes. You sleep over it.
+-5 0 0 0 0
+:Your schedule for the start of your junior year is miserable. All 9am and 6pm claseses. 
+
+random
+=flu season! You are sick.
+-1 0 -3 -1 -1
+=Do you want to build a snowman?
+_Let's go
+0 1 0 0 0
+_Go away!
+0 -1 0 0 0
+:Okay bye...
+=You study with your best buddy and have a good chat
+0 1 0 0 0
+=Your computer is broken. You have to fix it.
+0 0 0 -5 0
+=You listen to a resume workshop and polish your resume
+2 0 0 0 0
+=You attend an opening ceremony for a student organization. You run into someone special
+0 1 0 0 3
+=You are working out in gym. Oh shoot, you break your ankle
+_Time cures all ills.
+-1 -1 -2 0 0
+_I am going to the health center now.
+_You ordered takeout. You get a food poisoning.
+-1 -1 -1 -1 -1
+=Your parents decide to give you a second-hand car (Suddenly)!
+0 1 0 0 1
+=The boardgame club and a honor society invite you to join. Which one do you choose?
+_The boardgame club
+0 2 0 -1 1
+_The honor society
+2 1 0 -1 0
+_I prefer not to join either one of them
+
+
+
+daily
+=What do you want to do now?
+_go to office hour
+1 0 0 0 0
+_go to gym
+0 1 0 0 0
+_go party
+-1 2 0 -1 1
+_go to lib
+1 0 0 0 0
+_eat in dhall
+_order takeout
+0 0 0 -1 0
+_work on campus
+0 0 0 1 0

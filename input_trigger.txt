@@ -1,0 +1,25 @@
+daily
+go to office hour
+>5
+:You are interested in your professor's research area. 
+=Your professor sends you an email asking: "Are you still interested in joining my lab?"
+_Sorry, I wish you could ask earlier...
+_No, I am not interested anymore.
+_I'd love to!!
+2 1 0 0 0
+
+go party
+>3
+:Your crush on that party texts you and asks you out.
+_I have to study for my tests.
+2 0 0 0 -1
+_We are going to a movie!
+0 0 0 -1 2
+_I am no longer interested.
+
+work on campus
+>10
+:Your manager likes you and writes you a recommandation letter for the job you really want.
+3 1 0 0 0
+
+random
